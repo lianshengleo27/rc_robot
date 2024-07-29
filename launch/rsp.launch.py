@@ -15,10 +15,14 @@ def generate_launch_description():
     # Check if we're told to use sim time
     use_sim_time = LaunchConfiguration('use_sim_time')
 
+
     # Process the URDF file
-    pkg_path = os.path.join(get_package_share_directory('my_bot'))
+    pkg_path = os.path.join(get_package_share_directory('rc_dump'))
     xacro_file = os.path.join(pkg_path,'description','robot.urdf.xacro')
     robot_description_config = xacro.process_file(xacro_file)
+
+    # Rviz description file
+    rviz_config = os.path.join(pkg_path, "config", "view_bot.rviz")
     
     # Create a robot_state_publisher node
     params = {'robot_description': robot_description_config.toxml(), 'use_sim_time': use_sim_time}
@@ -28,14 +32,22 @@ def generate_launch_description():
         output='screen',
         parameters=[params]
     )
+    rivz2 = Node(
+        package="rviz2",
+        executable="rviz2",
+        name="rviz2",
+        arguments=["-d", rviz_config],
+        output="screen"
+    )
 
 
     # Launch!
     return LaunchDescription([
         DeclareLaunchArgument(
             'use_sim_time',
-            default_value='false',
+            default_value='true',
             description='Use sim time if true'),
 
-        node_robot_state_publisher
+        node_robot_state_publisher,
+        rivz2
     ])
