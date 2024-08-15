@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<!-- THIS is equivalent to controller.yaml for non-Gazebo control plugins -->
+<!-- THIS is equivalent to controller.yaml if ROS2 CONTROLLER is NOT used -->
 <!-- 
 controller_manager:
   ros__parameters:
@@ -8,9 +8,6 @@ controller_manager:
 
     diff_cont:
       type: diff_drive_controller/DiffDriveController
-
-    joint_broad:
-      type: joint_state_broadcaster/JointStateBroadcaster
 
 diff_cont:
   ros__parameters:
@@ -26,7 +23,7 @@ diff_cont:
 
     use_stamped_vel: false 
     -->
-    
+
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
 
     <gazebo>
