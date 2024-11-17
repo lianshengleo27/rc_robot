@@ -40,7 +40,7 @@ This starts the gazebo `obstable.worlds`
 
 ![obstacle_world](doc/images/obstable_world.png)
 
-## Start SLAM 
+## SLAM 
 ### 1. Generating a map by moving around the robot
 in `rc-ws` dirctory
 ```bash
@@ -57,7 +57,7 @@ ros2 launch slam_toolbox online_async_launch.py param_file:=~/Interests/rc_ws/sr
     mode: mapping #localization
 ```
 ### 2. Save the map
-![SLAM save map](./doc/images/slam_save_map.png)
+![SLAM save map](./doc/images/image.png)
 
 
 ## Localization (AMCL)
