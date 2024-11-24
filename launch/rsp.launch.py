@@ -24,7 +24,7 @@ def generate_launch_description():
     robot_description_config = Command(['xacro ', xacro_file, ' sim_mode:=', use_sim_time])
 
     # Rviz description file
-    rviz_config = os.path.join(pkg_path, "config", "view_bot.rviz")
+    rviz_config = os.path.join(pkg_path, "config", "rviz_nav2_bringup.rviz")
     
     # Create a robot_state_publisher node
     params = {'robot_description': robot_description_config, 'use_sim_time': use_sim_time}

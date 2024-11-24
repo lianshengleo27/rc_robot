@@ -4,8 +4,8 @@ Navigation 2 implementation on rc_bot, this is the hands-on for understanding be
 
 ### Todo
 
-- [x] Work on the website ~3d #feat @john 2020-03-20  
-- [ ] Fix the homepage ~1d #bug @jane  
+- [ ]  copy nav2_bringup `localization_launch.py` and `navigation_launch.py` and their respective 
+- [ ]  Working on real robot
   - [ ] Sub-task or description  
 
 
@@ -40,7 +40,7 @@ This starts the gazebo `obstable.worlds`
 
 ![obstacle_world](doc/images/obstable_world.png)
 
-## SLAM 
+## SLAM (ONLY if map generation is needed)
 ### 1. Generating a map by moving around the robot
 in `rc-ws` dirctory
 ```bash
