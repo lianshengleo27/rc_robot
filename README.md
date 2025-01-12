@@ -60,23 +60,23 @@ ros2 launch slam_toolbox online_async_launch.py param_file:=~/Interests/rc_ws/sr
 ![SLAM save map](./doc/images/image.png)
 
 
-## Localization (AMCL)
+## :star2: Localization (AMCL)
 localization continuously refines the robot's pose within the map. This is crucial for accurate navigation, especially in dynamic environments where the robot's pose may drift over time. Here is the step for launching localization node:
 
 ```bash
 ros2 launch nav2_bringup localization_launch.py map:=/path/to/map.yaml use_sim_time:=true
 ```
 
-<p> After launch, map might not be loaded successfully, do </p>
+<p> :bangbang: After launch, map might not be loaded successfully, do </p>
 
 - Fixed frame set to `map` (typing maunally)
-- Give the initial pose in Rviz
-- Under map section in Rviz, set Durability to `transient_local`
+- Give the initial pose in Rviz (:bangbang: + direction is where <b>wheels</b> are positioned )
+- Under `Map` >> `Topic` section in Rviz, set Durability to `transient_local`
 <br><br>
 ![load map after launching AMCL](./doc/images/localization.png)
 
 
-## Navigation
+## :star2: Navigation
 Once launching the localization, you can start navigation
 ```bash
 ros2 launch nav2_bringup navigation_launch.py use_sim_time:=true map_subscribe_transient_local:=true
