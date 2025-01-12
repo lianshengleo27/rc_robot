@@ -30,7 +30,7 @@ in `rc-ws` dirctory
 colcon build --symlink-install
 ```
 
-## Start Gazebo simulation
+## :star2: Start Gazebo simulation
 in `rc-ws` dirctory
 ```bash
 source install/setup.bash
