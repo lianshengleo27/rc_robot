@@ -44,9 +44,9 @@ def main():
     initial_pose.header.frame_id = 'map'
     initial_pose.header.stamp = navigator.get_clock().now().to_msg()
     initial_pose.pose.position.x = 0.0
-    initial_pose.pose.position.y = -0.0
-    initial_pose.pose.orientation.z = 1.0
-    initial_pose.pose.orientation.w = 0.0
+    initial_pose.pose.position.y = 0.0
+    initial_pose.pose.orientation.z = 0.0
+    initial_pose.pose.orientation.w = 1.0
     navigator.setInitialPose(initial_pose)
 
     # Wait for navigation to fully activate
